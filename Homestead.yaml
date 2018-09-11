@@ -1,0 +1,51 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: C:\OpenServer\domains\laravel
+      to: /home/vagrant/Code
+
+sites:
+    - map: local.homestead.com
+      to: /home/vagrant/Code/homestead.app
+    - map: local.kasheti.com
+      to: /home/vagrant/Code/kasheti/public
+    - map: local.tangerine-store.com
+      to: /home/vagrant/Code/laravel.dev/public
+    - map: local.grai.com
+      to: /home/vagrant/Code/grai/public
+    - map: local.studio-tocco.com
+      to: /home/vagrant/Code/studio-tocco1/public
+    - map: local.newbook.com
+      to: /home/vagrant/Code/newbook/public
+#
+
+databases:
+    - homestead
+    - kasheti
+    - test
+    - laravel_dev
+    - grai
+    - studio-tocco
+    - newbook
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp
